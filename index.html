@@ -372,6 +372,51 @@ footer .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;pad
   .tbl.stack th,.tbl.stack td{padding:8px 10px}
   .tbl.stack .pill{white-space:normal}
 }
+
+.rtiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px;margin-top:20px}
+.rt{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:var(--r);padding:14px 16px}
+.rt b{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:2rem;line-height:1;display:block;color:var(--ink);font-variant-numeric:tabular-nums}
+.rt span{font-size:.8rem;color:var(--muted);display:block;margin-top:4px;line-height:1.3}
+.rsplit{display:grid;gap:14px;margin-top:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))}
+.orgbar{display:flex;height:34px;border-radius:6px;overflow:hidden;font-size:.8rem;font-weight:700;color:#fff}
+.orgbar span{display:flex;align-items:center;padding:0 10px;white-space:nowrap}
+.orgbar .ss{background:var(--ah)}.orgbar .sd{background:var(--navy)}
+.obs{display:grid;gap:7px}
+.ob{display:grid;grid-template-columns:minmax(120px,1.2fr) 2fr auto;gap:10px;align-items:center;font-size:.86rem;color:var(--ink-2)}
+.ob i{display:block;height:10px;border-radius:3px;background:var(--ah)}
+.ob b{font-variant-numeric:tabular-nums;color:var(--ink)}
+.rs-t{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:1.5rem;margin:34px 0 0}
+.mxw{overflow-x:auto}
+.tbl.mx{font-size:.88rem;min-width:900px}
+.tbl.mx th.n{text-align:right;font-size:.66rem;letter-spacing:.06em;line-height:1.25;vertical-align:bottom}
+.tbl.mx th.n i{display:block;margin-left:auto;width:16px;height:4px;border-radius:2px;background:var(--c);margin-bottom:6px}
+.tbl.mx td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;background:color-mix(in srgb,var(--c) calc(var(--a,0)*100%),transparent)}
+.tbl.mx td.z{color:#c3ccd6;font-weight:400}
+.tbl.mx tbody th{font-weight:700;white-space:nowrap;position:sticky;left:0;background:var(--surface);z-index:1;text-transform:none;letter-spacing:0;font-size:.9rem;color:var(--ink)}
+.tbl.mx tbody th a{color:var(--ink);text-decoration:none}
+.tbl.mx tbody th a:hover{text-decoration:underline}
+.tbl.mx tbody th small{display:block;font-weight:500;color:var(--muted);font-size:.74rem;letter-spacing:0}
+.tbl.mx thead th:first-child{position:sticky;left:0;background:var(--surface);z-index:2}
+.tbl.mx tr.repo th,.tbl.mx tr.repo td{color:var(--muted);font-style:italic}
+.tbl.mx tfoot th{text-align:left;border-top:2px solid var(--ink);position:sticky;left:0;background:var(--surface)}
+.tbl.mx tfoot td{text-align:right}
+.wf{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--orange);color:#fff;font-size:.68rem;font-weight:800;vertical-align:1px}
+.rg{margin-top:20px;scroll-margin-top:16px}
+.rg h3{font-size:1.1rem;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.rl{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr))}
+.ri{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.ri.fl{border-color:#f4cdb0;box-shadow:inset 3px 0 0 var(--orange)}
+.rh{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font-size:.88rem;color:var(--muted)}
+.rh b{color:var(--ink);font-size:.95rem}
+.og{font-size:.66rem;font-weight:800;letter-spacing:.06em;border-radius:4px;padding:1px 6px;color:#fff;margin-left:auto}
+.og.ss{background:var(--ah)}.og.sd{background:var(--navy)}
+.rm{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.mc{font-size:.8rem;color:var(--ink-2);background:color-mix(in srgb,var(--c) 12%,#fff);border-left:3px solid var(--c);border-radius:4px;padding:2px 8px}
+.mc b{color:var(--ink)}
+.rx{margin-top:8px;font-size:.74rem;color:var(--muted);line-height:1.45;word-break:break-word}
+.rf{margin-top:8px;font-size:.8rem;color:#8a3d06;background:var(--orange-soft);border-radius:5px;padding:6px 9px}
+@media (max-width:700px){.tbl.mx{min-width:760px;font-size:.82rem}.tbl.mx tbody th,.tbl.mx tfoot th{white-space:normal;width:118px;min-width:118px;max-width:118px;font-size:.84rem;padding-right:8px;box-shadow:2px 0 0 var(--line)}.tbl.mx th,.tbl.mx td{padding:8px 9px}}
+@media (max-width:560px){.rt b{font-size:1.6rem}.ob{grid-template-columns:1fr auto}.ob i{grid-column:1/-1;grid-row:2}}
 .mat{margin:0;display:grid;gap:10px}
 .facts .vigf{grid-column:1/-1;background:#f3f7fb}
 .facts .vigf dd{font-size:1.05rem}
@@ -929,6 +974,86 @@ function renderGRAC(){
   app.querySelectorAll(".chip[data-v]").forEach(b=>b.onclick=()=>{grView=b.dataset.v; const y=scrollY; renderGRAC(); scrollTo(0,y);});
 }
 
+/* =====================================================================
+   4) RESUMO DOS TERMOS DE DOAÇÃO — Planilha de Controle de Ajuda Humanitária 2026
+   Valores como estão na planilha (nomes de pessoas omitidos). flag = ponto a conferir.
+   ===================================================================== */
+const TDS = [{"td": "211", "org": "SEDSODH", "mun": "Rio de Janeiro", "data": "04/12/2025", "it": {"limpeza": 232}, "raw": null, "sei": null, "fide": null, "orig": "Cestas Alimentos Brasil - CAB", "flag": "Na planilha, as 232 unidades estão na coluna Kit Limpeza; as mensagens do SIMEO indicam 232 cestas básicas (Manguinhos)."}, {"td": "212", "org": "SEDSODH", "mun": "Rio de Janeiro", "data": "04/12/2025", "it": {"limpeza": 40}, "raw": null, "sei": null, "fide": null, "orig": "Cestas Alimentos Brasil - CAB", "flag": "Na planilha, as 40 unidades estão na coluna Kit Limpeza; as mensagens do SIMEO indicam 40 cestas básicas (Jacarezinho)."}, {"td": "214", "org": "SEDSODH", "mun": "Rio Claro", "data": "15/01/2026", "it": {"colchao": 114}, "raw": null, "sei": "SEI-270003/000385/2026", "fide": "RJ-F-3304409-13214-20260114", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "215", "org": "SEDSODH", "mun": "Rio Claro", "data": "16/01/2026", "it": {"cesta": 57, "higiene": 57, "limpeza": 57}, "raw": null, "sei": "SEI-270003/000385/2026", "fide": "RJ-F-3304409-13214-20260114", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "216-A", "org": "SEDSODH", "mun": "Paty do Alferes", "data": "30/01/2026", "it": {"cesta": 50, "limpeza": 50}, "raw": null, "sei": "SEI-270003/000868/2026", "fide": "RJ-F-3303856-13214-20260204", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "216-B", "org": "SEDSODH", "mun": "Paty do Alferes", "data": "30/01/2026", "it": {"colchao": 50}, "raw": null, "sei": "SEI-270003/000868/2026", "fide": "RJ-F-3303856-13214-20260204", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "217", "org": "SEDEC", "mun": "Itaperuna", "data": "05/02/2026", "it": {"colchao": 102, "dormitorio": 102}, "raw": null, "sei": "SEI-270003/000840/2026", "fide": "RJ-F-3302205-12300-20260202", "orig": "DBM 1/5 Guarus", "flag": null}, {"td": "218", "org": "SEDSODH", "mun": "Itaperuna", "data": "06/02/2026", "it": {"colchao": 148}, "raw": null, "sei": "SEI-270003/000840/2026", "fide": "RJ-F-3302205-12300-20260202", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "219", "org": "SEDEC", "mun": "Itaperuna", "data": "06/02/2025", "it": {"enxoval": 248}, "raw": null, "sei": "SEI-270003/000840/2026", "fide": "RJ-F-3302205-12300-20260202", "orig": "CapLog/Dgdec", "flag": "Data registrada como 06/02/2025 (provavelmente 06/02/2026)."}, {"td": "220", "org": "SEDSODH", "mun": "Itaperuna", "data": "06/02/2026", "it": {"cesta": 500, "limpeza": 200}, "raw": null, "sei": "SEI-270003/000840/2026", "fide": "RJ-F-3302205-12300-20260202", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "221", "org": "SEDEC", "mun": "Paty do Alferes", "data": "06/02/2026", "it": {"dormitorio": 100, "agua": 100}, "raw": null, "sei": "SEI-270003/000868/2026", "fide": "RJ-F-3303856-13214-20260204", "orig": "CapLog/Dgdec", "flag": null}, {"td": "222", "org": "SEDSODH", "mun": "Paty do Alferes", "data": "06/02/2026", "it": {"cesta": 100, "colchao": 100, "limpeza": 100}, "raw": null, "sei": "SEI-270003/000868/2026", "fide": "RJ-F-3303856-13214-20260204", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "223", "org": "SEDSODH", "mun": "São Sebastião do Alto", "data": "06/02/2026", "it": {"cesta": 25, "colchao": 25, "limpeza": 20}, "raw": null, "sei": "SEI-270003/000850/2026", "fide": "RJ-F-3305307-13214-20260202", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "224", "org": "SEDEC", "mun": "São Sebastião do Alto", "data": "07/02/2026", "it": {"dormitorio": 20, "higiene": 40}, "raw": null, "sei": "SEI-270003/000850/2026", "fide": "RJ-F-3305307-13214-20260202", "orig": "CapLog/Dgdec", "flag": null}, {"td": "225", "org": "SEDSODH", "mun": "Cantagalo", "data": "07/02/2026", "it": {"cesta": 38, "colchao": 75, "limpeza": 75}, "raw": null, "sei": "SEI-270003/000848/2026", "fide": "RJ-F-3301108-13214-20260202", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "226", "org": "SEDEC", "mun": "Cantagalo", "data": "07/02/2026", "it": {"dormitorio": 75, "higiene": 75, "agua": 100}, "raw": null, "sei": "SEI-270003/000848/2026", "fide": "RJ-F-3301108-13214-20260202", "orig": "CapLog/Dgdec", "flag": null}, {"td": "227", "org": "SEDSODH", "mun": "Porciúncula", "data": "09/02/2026", "it": {"colchao": 430, "cobertor": 61, "limpeza": 100}, "raw": null, "sei": "SEI-270003/000785/2026", "fide": "RJ-F-3304102-12300-20260206", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "228", "org": "SEDEC", "mun": "Porciúncula", "data": "09/02/2026", "it": {"colchao": 70, "dormitorio": 70}, "raw": null, "sei": "SEI-270003/000785/2026", "fide": "RJ-F-3304102-12300-20260206", "orig": "CapLog/Dgdec", "flag": null}, {"td": "229", "org": "SEDSODH", "mun": "Cantagalo", "data": "10/02/2026", "it": {"cesta": 137, "higiene": 100, "limpeza": 300}, "raw": null, "sei": "SEI-270003/000848/2026", "fide": "RJ-F-3301108-13214-20260202", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "230", "org": "SEDSODH", "mun": "Paty do Alferes", "data": "10/02/2026", "it": {"higiene": 100}, "raw": null, "sei": "SEI-270003/000868/2026", "fide": "RJ-F-3303856-13214-20260204", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "231", "org": "SEDSODH", "mun": "Cantagalo", "data": "10/02/2026", "it": {"cesta": 37}, "raw": null, "sei": "SEI-270003/000848/2026", "fide": "RJ-F-3301108-13214-20260202", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "232", "org": "SEDSODH", "mun": "Paty do Alferes", "data": "10/02/2026", "it": {"higiene": 100}, "raw": null, "sei": "SEI-270003/000868/2026", "fide": "RJ-F-3303856-13214-20260204", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "233", "org": "SEDSODH", "mun": "Porciúncula", "data": "11/02/2026", "it": {"cesta": 100, "higiene": 500}, "raw": null, "sei": "SEI-270003/000785/2026", "fide": "RJ-F-3304102-12300-20260206", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "234", "org": "SEDSODH", "mun": "Itaperuna", "data": "11/02/2026", "it": {"higiene": 500, "limpeza": 300}, "raw": null, "sei": "SEI-270003/000840/2026", "fide": "RJ-F-3302205-12300-20260202", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "235", "org": "SEDSODH", "mun": "Barra Mansa", "data": "12/02/2026", "it": {"colchao": 253}, "raw": null, "sei": "SEI-270003/000849/2026", "fide": "RJ-F-3300407-13214-20260209", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "236", "org": "SEDSODH", "mun": "Barra Mansa", "data": "12/02/2026", "it": {"cesta": 300, "higiene": 420}, "raw": null, "sei": "SEI-270003/000849/2026", "fide": "RJ-F-3300407-13214-20260209", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "237", "org": "SEDSODH", "mun": "Barra Mansa", "data": "13/02/2026", "it": {"colchao": 47, "limpeza": 400}, "raw": null, "sei": "SEI-270003/000849/2026", "fide": "RJ-F-3300407-13214-20260209", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "238", "org": "SEDEC", "mun": "Laje de Muriaé", "data": "14/02/2026", "it": {"dormitorio": 100, "agua": 30}, "raw": null, "sei": "SEI-270003/000895/2026", "fide": "RJ-F-3302304-13214-20260210", "orig": "CapLog/Dgdec", "flag": null}, {"td": "239", "org": "SEDSODH", "mun": "Laje de Muriaé", "data": "13/02/2025", "it": {"colchao": 240}, "raw": null, "sei": "SEI-270003/000895/2026", "fide": "RJ-F-3302304-13214-20260210", "orig": "ABRIGO CRISTO REDENTOR", "flag": "Data registrada como 13/02/2025 (provavelmente 13/02/2026)."}, {"td": "240", "org": "SEDSODH", "mun": "Laje de Muriaé", "data": "14/02/2026", "it": {"cesta": 550}, "raw": null, "sei": "SEI-270003/000895/2026", "fide": "RJ-F-3302304-13214-20260210", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "241", "org": "SEDSODH", "mun": "Laje de Muriaé", "data": "14/02/2026", "it": {"higiene": 531}, "raw": "550-19", "sei": "SEI-270003/000895/2026", "fide": "RJ-F-3302304-13214-20260210", "orig": "Cestas Alimentos Brasil - CAB", "flag": "Quantidade registrada como texto \"550-19\". Nos totais foi considerado 531."}, {"td": "242", "org": "SEDEC", "mun": "Silva Jardim", "data": "14/02/2026", "it": {"dormitorio": 150, "agua": 60}, "raw": null, "sei": "SEI-270003/000853/2026", "fide": "RJ-F-3305604-13214-20260208", "orig": "CapLog/Dgdec", "flag": null}, {"td": "243", "org": "SEDSODH", "mun": "Silva Jardim", "data": "14/02/2026", "it": {"colchao": 150}, "raw": null, "sei": "SEI-270003/000853/2026", "fide": "RJ-F-3305604-13214-20260208", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "244", "org": "SEDSODH", "mun": "Itaperuna", "data": "15/02/2026", "it": {"colchao": 170}, "raw": null, "sei": "SEI-270003/000840/2026", "fide": "RJ-F-3302205-12300-20260202", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "245", "org": "SEDSODH", "mun": "Silva Jardim", "data": "16/02/2026", "it": {"cesta": 100, "higiene": 150}, "raw": null, "sei": "SEI-270003/000853/2026", "fide": "RJ-F-3305604-13214-20260208", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "246", "org": "SEDSODH", "mun": "Silva Jardim", "data": "18/02/2026", "it": {"limpeza": 200}, "raw": null, "sei": "SEI-270003/000853/2026", "fide": "RJ-F-3305604-13214-20260208", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "247", "org": "SEDEC", "mun": "Reposição C-02 Guarus", "data": "21/02/2026", "it": {"colchao": 102, "dormitorio": 102}, "raw": null, "sei": null, "fide": null, "orig": "CapLog/Dgdec", "flag": null}, {"td": "248", "org": "SEDEC", "mun": "Nova Iguaçu", "data": "25/02/2026", "it": {"colchao": 300, "dormitorio": 300}, "raw": null, "sei": "SEI-270003/000932/2026", "fide": "RJ-F-3303500-13214-20260221", "orig": "CapLog/Dgdec", "flag": null}, {"td": "249", "org": "SEDEC", "mun": "Paraty", "data": "27/02/2026", "it": {"colchao": 100, "dormitorio": 100}, "raw": null, "sei": "SEI-270003/001011/2026", "fide": "RJ-F-3303807-13214-20260221", "orig": "C-03 - DBM 3/10 Frade", "flag": null}, {"td": "250", "org": "SEDEC", "mun": "Bom Jesus do Itabapoana", "data": "28/02/2026", "it": {"colchao": 45, "dormitorio": 45}, "raw": null, "sei": "SEI-270003/001174/2026", "fide": "RJ-F-3300605-13214-20260226", "orig": "DBM 1/5 Guarus", "flag": null}, {"td": "251", "org": "SEDEC", "mun": "Paraty", "data": "01/03/2026", "it": {"colchao": 100, "dormitorio": 100}, "raw": null, "sei": "SEI-270003/001011/2026", "fide": "RJ-F-3303807-13214-20260221", "orig": "C-03 - DBM 3/10 Frade", "flag": null}, {"td": "252", "org": "SEDEC", "mun": "Rio das Ostras", "data": "01/03/2026", "it": {"colchao": 200, "dormitorio": 200, "higiene": 200, "limpeza": 200}, "raw": null, "sei": "SEI-270003/001151/2026", "fide": "RJ-F-3304524-13214-20260226", "orig": "CapLog/Dgdec", "flag": null}, {"td": "253", "org": "SEDEC", "mun": "Rio das Ostras", "data": "03/03/2026", "it": {"colchao": 100, "enxoval": 100}, "raw": null, "sei": "SEI-270003/001151/2026", "fide": "RJ-F-3304524-13214-20260226", "orig": "CapLog/Dgdec", "flag": null}, {"td": "254", "org": "SEDEC", "mun": "Reposição C-02 Guarus", "data": "02/02/2026", "it": {"colchao": 45, "dormitorio": 45}, "raw": null, "sei": null, "fide": null, "orig": "CapLog/Dgdec", "flag": "Data registrada como 02/02/2026, fora da sequência dos termos; as mensagens do SIMEO indicam 02/03/2026."}, {"td": "255", "org": "SEDSODH", "mun": "Bom Jesus do Itabapoana", "data": "03/03/2026", "it": {"cesta": 60, "higiene": 100, "limpeza": 60}, "raw": null, "sei": "SEI-270003/001174/2026", "fide": "RJ-F-3300605-13214-20260226", "orig": "Cestas Alimentos Brasil - CAB", "flag": null}, {"td": "256", "org": "SEDEC", "mun": "Bom Jesus do Itabapoana", "data": "03/03/2026", "it": {"agua": 60}, "raw": null, "sei": "SEI-270003/001174/2026", "fide": "RJ-F-3300605-13214-20260226", "orig": "CapLog/Dgdec", "flag": null}, {"td": "257", "org": "SEDSODH", "mun": "Paraty", "data": "06/03/2026", "it": {"colchao": 500}, "raw": null, "sei": "SEI-270003/001011/2026", "fide": "RJ-F-3303807-13214-20260221", "orig": "ABRIGO CRISTO REDENTOR", "flag": null}, {"td": "258", "org": "SEDEC", "mun": "Rio das Ostras", "data": "12/03/2026", "it": {"colchao": 300, "dormitorio": 300}, "raw": null, "sei": "SEI-270003/001151/2026", "fide": "RJ-F-3304524-13214-20260226", "orig": "CapLog/Dgdec", "flag": null}, {"td": "259", "org": "SEDEC", "mun": "Japeri", "data": "13/03/2026", "it": {"colchao": 200, "dormitorio": 200}, "raw": null, "sei": "SEI-270003/001243/2026", "fide": "RJ-F-3302270-13214-20260227", "orig": null, "flag": "Local de retirada não informado."}, {"td": "260", "org": "SEDEC", "mun": "Mesquita", "data": "16/03/2026", "it": {"colchao": 178, "dormitorio": 59}, "raw": null, "sei": "SEI-270003/001116/2026", "fide": "RJ-F-3302858-13214-20260222", "orig": "CapLog/Dgdec", "flag": null}, {"td": "261", "org": "SEDEC", "mun": "Rio das Flores", "data": "07/10/2026", "it": {"colchao": 150, "enxoval": 150, "agua": 50}, "raw": null, "sei": null, "fide": null, "orig": "CapLog/Dgdec", "flag": null}];
+
+const MATS = [
+  {k:"cesta", n:"Cestas básicas", c:"#b5620c"},
+  {k:"colchao", n:"Colchões", c:"#1f68b5"},
+  {k:"dormitorio", n:"Kits dormitório", c:"#4b5fb0"},
+  {k:"enxoval", n:"Kits enxoval", c:"#7a4bb0"},
+  {k:"cobertor", n:"Cobertores", c:"#8a5a3c"},
+  {k:"higiene", n:"Kits higiene pessoal", c:"#2f8a5c"},
+  {k:"limpeza", n:"Kits limpeza", c:"#0f7c8a"},
+  {k:"agua", n:"Fardos de água (6 × 1,5 L)", c:"#3a8fd0"}
+];
+const isRepo = t => /^Reposição/.test(t.mun);
+const fmt = n => n.toLocaleString("pt-BR");
+const TOT = Object.fromEntries(MATS.map(m=>[m.k, TDS.filter(t=>!isRepo(t)).reduce((s,t)=>s+(t.it[m.k]||0),0)]));
+const RS_MUN = [...new Set(TDS.filter(t=>!isRepo(t)).map(t=>t.mun))];
+
+function renderResumo(){
+  setTab("ah");
+  const nOrg = o => TDS.filter(t=>t.org===o).length;
+  const tiles = MATS.map(m=>`<div class="rt" style="--c:${m.c}"><b>${fmt(TOT[m.k])}</b><span>${m.n}</span></div>`).join("");
+  // matriz municípios × materiais
+  const grupos = RS_MUN.map(m=>({m, L:TDS.filter(t=>t.mun===m)})).concat([{m:"Reposição de contêiner C-02 (Guarus)", repo:true, L:TDS.filter(isRepo)}]);
+  const mx = Object.fromEntries(MATS.map(k=>[k.k, Math.max(...grupos.filter(g=>!g.repo).map(g=>g.L.reduce((s,t)=>s+(t.it[k.k]||0),0)))]));
+  const rowsM = grupos.map(g=>{
+    const cells = MATS.map(k=>{ const v=g.L.reduce((s,t)=>s+(t.it[k.k]||0),0);
+      const a = v && !g.repo ? (0.10+0.55*v/mx[k.k]).toFixed(2) : 0;
+      return `<td class="n${v?'':' z'}" style="${v?`--a:${a};--c:${k.c}`:''}">${v?fmt(v):"·"}</td>`; }).join("");
+    const fl = g.L.some(t=>t.flag);
+    return `<tr${g.repo?' class="repo"':''}><th scope="row"><a href="#rs-${slug(g.m)}">${esc(g.m)}</a>${fl?' <span class="wf" title="Há ponto a conferir">!</span>':''}<small>${g.L.length} termo${g.L.length>1?'s':''}</small></th>${cells}</tr>`;
+  }).join("");
+  const totRow = `<tr class="tot"><th scope="row">Total nos municípios</th>${MATS.map(k=>`<td class="n">${fmt(TOT[k.k])}</td>`).join("")}</tr>`;
+  // locais de retirada
+  const origs = Object.entries(TDS.reduce((o,t)=>{const k=t.orig||"Não informado"; o[k]=(o[k]||0)+1; return o;},{})).sort((a,b)=>b[1]-a[1]);
+  const maxO = origs[0][1];
+  const origHTML = origs.map(([k,v])=>`<div class="ob"><span>${esc(k)}</span><i style="width:${(v/maxO*100).toFixed(0)}%"></i><b>${v}</b></div>`).join("");
+  // lista por município
+  const chip = (t,k) => { const m=MATS.find(x=>x.k===k); const v=t.it[k]; return `<span class="mc" style="--c:${m.c}"><b>${k==="higiene"&&t.raw?esc(t.raw):fmt(v)}</b> ${m.n.toLowerCase()}</span>`; };
+  const lista = grupos.map(g=>`
+    <section class="rg" id="rs-${slug(g.m)}">
+      <h3>${esc(g.m)}</h3>
+      <div class="rl">${g.L.map(t=>`
+        <div class="ri${t.flag?' fl':''}">
+          <div class="rh"><b>TD ${esc(t.td)}</b><span>${esc(t.data)}</span><span class="og ${t.org==='SEDEC'?'sd':'ss'}">${esc(t.org)}</span></div>
+          <div class="rm">${MATS.filter(m=>t.it[m.k]).map(m=>chip(t,m.k)).join("")}</div>
+          <div class="rx">${t.orig?`Retirada: ${esc(t.orig)}`:""}${t.sei?` · ${esc(t.sei)}`:""}${t.fide?` · FIDE ${esc(t.fide)}`:""}</div>
+          ${t.flag?`<div class="rf"><b>A conferir:</b> ${esc(t.flag)}</div>`:""}
+        </div>`).join("")}</div>
+    </section>`).join("");
+  const nFlag = TDS.filter(t=>t.flag).length;
+  app.innerHTML = `
+    <section class="in dhead">
+      <a class="back" href="#ajuda-humanitaria">← Ajuda humanitária</a>
+      <h1>Resumo dos Termos de Doação</h1>
+      <div class="dmeta"><span class="pill" style="--c:var(--ah);--cs:var(--ah-soft)">Planilha de Controle · Ajuda Humanitária 2026</span><span>${TDS.length} termos (TD ${TDS[0].td} a ${TDS[TDS.length-1].td})</span><span>${RS_MUN.length} municípios</span><span>dezembro de 2025 a outubro de 2026</span></div>
+    </section>
+    <section class="in">
+      <div class="rtiles">${tiles}</div>
+      <div class="rsplit">
+        <div class="text"><h3>Quem doou</h3><h4>Origem da doação por termo</h4>
+          <div class="orgbar"><span class="ss" style="flex:${nOrg('SEDSODH')}">SEDSODH · ${nOrg('SEDSODH')}</span><span class="sd" style="flex:${nOrg('SEDEC')}">SEDEC · ${nOrg('SEDEC')}</span></div>
+          <p style="margin-top:12px;font-size:.88rem">A <b>SEDSODH</b> forneceu sobretudo cestas básicas, colchões e kits de higiene e limpeza. A <b>SEDEC</b> forneceu kits dormitório, kits enxoval, água mineral e colchões, a partir do CApLog e dos contêineres regionais.</p></div>
+        <div class="text"><h3>De onde saiu o material</h3><h4>Local de retirada, em número de termos</h4><div class="obs">${origHTML}</div></div>
+      </div>
+      <h2 class="rs-t">Material por município</h2>
+      <p class="src" style="margin-top:2px">Quanto mais forte a cor, maior a quantidade em relação aos demais municípios. Clique no nome para ver os termos. As reposições de contêiner (transferências internas da SEDEC) não entram nos totais.</p>
+      <div class="tblwrap mxw"><table class="tbl mx">
+        <thead><tr><th>Município</th>${MATS.map(m=>`<th class="n" style="--c:${m.c}"><i></i>${m.n}</th>`).join("")}</tr></thead>
+        <tbody>${rowsM}</tbody><tfoot>${totRow}</tfoot></table></div>
+      <h2 class="rs-t">Termos de doação por município</h2>
+      ${nFlag?`<p class="src" style="margin-top:2px">${nFlag} termos têm pontos a conferir, marcados em laranja. Os valores aparecem exatamente como estão na planilha.</p>`:""}
+      ${lista}
+      <p class="src" style="margin-top:24px">Fonte: Planilha de Controle de Ajuda Humanitária 2026 (SEDEC-RJ). Nomes de coordenadores, condutores e responsáveis pelo recebimento foram omitidos.</p>
+    </section>`;
+}
+
 /* ===================================================================== */
 const app = document.getElementById("app");
 let fRedec = "todas";
@@ -970,6 +1095,7 @@ function renderHome(){
         </a>
       </div>
       <a class="gline" href="#atuacao-grac"><span class="eyebrow">Atuação do GRAC</span><span>Máquinas, caminhões-pipa e equipes de ${GR.length} instituições estaduais articuladas em ${GR_MUN.length} municípios · informações de 01/03/2026</span><b>Ver →</b></a>
+      <a class="gline" href="#ajuda-resumo" style="border-left-color:var(--ah);margin-top:8px"><span class="eyebrow" style="color:var(--ah)">Resumo dos Termos de Doação</span><span>${fmt(TOT.colchao)} colchões, ${fmt(TOT.cesta)} cestas básicas e ${fmt(TOT.higiene+TOT.limpeza)} kits de higiene e limpeza em ${TDS.length} termos</span><b style="color:var(--ah)">Ver →</b></a>
     </section>`;
 }
 
@@ -1072,6 +1198,7 @@ function renderAH(){
       <div class="dmeta"><span>${AH_MUN.length} municípios atendidos</span><span>${AH_ENVIOS} envios registrados</span><span>novembro de 2025 a março de 2026</span></div>
     </section>
     <section class="in">
+      <a class="gline" href="#ajuda-resumo" style="border-left-color:var(--ah);margin:0 0 14px"><span class="eyebrow" style="color:var(--ah)">Resumo dos Termos de Doação</span><span>Totais por material e por município, com os ${TDS.length} termos da Planilha de Controle</span><b style="color:var(--ah)">Ver →</b></a>
       <div class="tblwrap scroll">
         <table class="tbl ahtbl">
           <thead><tr><th>Data</th><th>Município</th><th>Ocorrência</th><th>Descrição</th><th>Fotos e detalhes</th></tr></thead>
@@ -1153,6 +1280,8 @@ function route(){
   const d = DEC.find(x=>x.id===h), a = AH.find(x=>x.id===h);
   if (h==="situacao-emergencia") renderSE();
   else if (h==="atuacao-grac") renderGRAC();
+  else if (h==="ajuda-resumo") renderResumo();
+  else if (h.startsWith("rs-")) { renderResumo(); const el=document.getElementById(h); if(el){ layoutGalleries(); el.scrollIntoView(); return; } }
   else if (h==="ajuda-humanitaria") renderAH();
   else if (d) renderDec(d);
   else if (a) renderAHDet(a);
